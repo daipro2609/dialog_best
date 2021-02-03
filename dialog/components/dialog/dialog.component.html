@@ -1,0 +1,25 @@
+<div class="dashboard-dialog">
+  <div class="dashboard-dialog-header" mat-dialog-title *ngIf="isShowsHeader()"
+        [ngClass]="getStyleHeader()">
+    <div class="font-size-20">{{param.Title}}</div>
+    <button type="button" class="close dashboard-dialog-close" tabindex="-1" aria-label="Close"
+          [disabled]="isShowProgressBar()"
+          [hidden]="!isHiddenButtonClose()"
+          (click)="onClickCloseDialog()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="dashboard-dialog-content">
+    <ng-template [cdkPortalOutlet]="portal"></ng-template>
+  </div>
+
+  <div class="dashboard-dialog-footer" *ngIf="isShowFooter()"
+    [ngClass]="classElementGroupButton()">
+    <button mat-button tabindex="-1" class="btn dashboard-dialog-button" *ngFor="let button of buttonsFooter()"
+      [disabled]="isShowProgressBar()"
+      [ngClass]="button.Class"
+      (click)="onClickAction(button)">{{button.Text}}</button>
+  </div>
+  <mat-progress-bar value="10" mode="'indeterminate'" [color]="'primary'" *ngIf="isShowProgressBar()"></mat-progress-bar>
+</div>

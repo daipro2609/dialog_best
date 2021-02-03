@@ -1,0 +1,18 @@
+<ng-container [ngTemplateOutlet]="getTemplate()" [ngTemplateOutletContext]="getContent()">
+</ng-container>
+
+<ng-template #information>
+  <div class="dialog-content-message" [innerHTML]="getContent()"></div>
+</ng-template>
+
+<ng-template #confirm>
+  <div class="dialog-content-message" [innerHTML]="getContent()"></div>
+</ng-template>
+
+<ng-template #widthOut>
+  <div class="dialog-content-message" [innerHTML]="getContent()"></div>
+</ng-template>
+
+<ng-template #error>
+  <div class="dialog-content-message" [innerHTML]="getContent()"></div>
+</ng-template>

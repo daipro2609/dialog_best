@@ -1,0 +1,58 @@
+@import "variables";
+@import "mixin";
+.dashboard-dialog {
+  .dashboard-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    align-items: center;
+    padding: 5px 10px;
+    border-bottom: 1px solid #dee2e6;
+    line-height: 40px;
+
+    .dashboard-dialog-close {
+      font-size: xx-large;
+    }
+
+    .dashboard-dialog-close:focus {
+      outline: none;
+      border: none;
+    }
+  }
+
+  .dashboard-dialog-content {
+    max-height: 70vh;
+    padding: 15px 10px;
+    overflow: auto;
+
+    .dialog-content-message {
+      font-size: small;
+    }
+  }
+
+  .dashboard-dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    border-top: 1px solid #dee2e6;
+    line-height: 40px;
+
+    .dashboard-dialog-button {
+      height: 40px;
+      min-width: 100px;
+      margin: 0 5px;
+      font-size: larger;
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .dashboard-dialog-header {
+      padding: 5px;
+    }
+
+    .dashboard-dialog-body {
+      padding: 15px 5px;
+    }
+  }
+
+}
